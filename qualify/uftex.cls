@@ -1,7 +1,7 @@
 \def\filename{uftex.dtx}
-%  X.0.0 - novas fun√ß√µes
-%  0.X.0 - melhorias e / ou evolu√ß√µes
-%  0.0.X - corre√ß√£o de bugs
+%  X.0.0 - novas funÁıes
+%  0.X.0 - melhorias e / ou evoluÁıes
+%  0.0.X - correÁ„o de bugs
 \def\fileversion{v2.2.0}
 \def\filedate{2019/05/09}
 \NeedsTeXFormat{LaTeX2e}
@@ -18,44 +18,49 @@
 % ------------------------------------------------------------------------------------------------------ %
 % --------------- Pacotes
 % ------------------------------------------------------------------------------------------------------ %
-% --------------- A codifica√ß√£o de fonte T1 √© uma codifica√ß√£o de 8 bits e utiliza fontes que t√™m 256 glifos
+\RequirePackage{cmap}  
+
+% --------------- A codificaÁ„o de fonte T1 È uma codificaÁ„o de 8 bits e utiliza fontes que tÍm 256 glifos
 \RequirePackage[T1]{fontenc}
-% --------------- Idioma da texto, a acentua√ß√£o pode ser escrita normalmente
-\RequirePackage[english,brazil]{babel}
-% --------------- Codifica√ß√£o do arquivo
+% --------------- Idioma da texto, a acentuaÁ„o pode ser escrita normalmente
+\RequirePackage[english,brazilian]{babel}
+% --------------- CodificaÁ„o do arquivo
 \RequirePackage[latin1]{inputenc}
-% --------------- Inclus√£o de arquivos em PDF no documento
+
+\RequirePackage{lmodern}
+
+% --------------- Inclus„o de arquivos em PDF no documento
 \RequirePackage{pdfpages}
-% --------------- Utiliza√ß√£o da marca d'agua
+% --------------- UtilizaÁ„o da marca d'agua
 \RequirePackage{wallpaper}  
 % --------------- Usamos arquivos pdf/png como figuras
 \RequirePackage{graphicx}
 % --------------- Somar total de folhas
 %\RequirePackage{zref}
 \RequirePackage[savepos,totpages,titleref,dotfill,counter,user]{zref}
-% --------------- Espa√ßamento flex√≠vel
+% --------------- EspaÁamento flexÌvel
 \RequirePackage{setspace}
-% --------------- Indenta√ß√£o do primeiro par√°grafo
+% --------------- IndentaÁ„o do primeiro par·grafo
 \RequirePackage{indentfirst}
 % --------------- Acrescentamos a bibliografia/indice/conteudo no Table of Contents
 \RequirePackage[nottoc, notlof,notlot]{tocbibind}
 % --------------- Multiplas colunas e linhas em tabelas
 \RequirePackage{multirow}
-% --------------- Rota√ß√£o e objeto flutuante, como figuras e tabelas
+% --------------- RotaÁ„o e objeto flutuante, como figuras e tabelas
 \RequirePackage{rotating}
-% --------------- Referenciar o n√∫mero de p√°ginas no documento
+% --------------- Referenciar o n˙mero de p·ginas no documento
 \RequirePackage{lastpage}
 % --------------- Fornece comandos extras para melhorar a qualidade das tabelas
 \RequirePackage{booktabs}
-% --------------- Conjunto de constru√ß√£o de fontes virtual, a partir das fontes CM Padr√£o
+% --------------- Conjunto de construÁ„o de fontes virtual, a partir das fontes CM Padr„o
 \RequirePackage{ae}
-% --------------- Utiliza√ß√£o de subfiguras
+% --------------- UtilizaÁ„o de subfiguras
 \RequirePackage{subfigure}
-% --------------- Rota√ß√£o e reposicionamento de figuras
+% --------------- RotaÁ„o e reposicionamento de figuras
 \RequirePackage{wrapfig}
-% --------------- Utiliza√ß√£o das mais variadas f√≥rmulas matem√°ticas
+% --------------- UtilizaÁ„o das mais variadas fÛrmulas matem·ticas
 \RequirePackage{amsfonts,amsthm,amsopn,amssymb,latexsym}
-% --------------- Para utiliza√ß√£o e formata√ß√£o de c√≥digo fonte em diversas linguagens
+% --------------- Para utilizaÁ„o e formataÁ„o de cÛdigo fonte em diversas linguagens
 \RequirePackage{listings}
 \lstset{ %
 basicstyle=\sffamily\footnotesize,       % the size of the fonts that are used for the code
@@ -81,23 +86,23 @@ xrightmargin=10pt
 \RequirePackage[pdftex,unicode=true,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=black,linkcolor=black,urlcolor=black,filecolor=black,bookmarksopen=true]{hyperref}
 % --------------- soluciona o problema com o hyperref e capitulos
 %\RequirePackage[all]{hypcap}
-% --------------- Estilo de refer√™ncias bibliogr√°ficas
+% --------------- Estilo de referÍncias bibliogr·ficas
 %\RequirePackage[numbers]{natbib}
-% --------------- Garantir que dois ou mais blocos de texto ocupam o mesmo espa√ßo horizontal na p√°gina.
+% --------------- Garantir que dois ou mais blocos de texto ocupam o mesmo espaÁo horizontal na p·gina.
 \RequirePackage{eqparbox}
-% --------------- Este pacote exporta algumas macros a partir do kernel LATEX em um namespace separado e torna dispon√≠vel para outros formatos, como TEX.
+% --------------- Este pacote exporta algumas macros a partir do kernel LATEX em um namespace separado e torna disponÌvel para outros formatos, como TEX.
 \RequirePackage{ltxcmds}
-% --------------- Utiliza√ß√£o de comandos b√°sicos como \ifthenelse
+% --------------- UtilizaÁ„o de comandos b·sicos como \ifthenelse
 \RequirePackage{ifthen}
-% --------------- Este pacote pode desativar toda a hifeniza√ß√£o ou ativar a hifeniza√ß√£o de fontes n√£o-alfab√©ticos ou monoespa√ßadas.
+% --------------- Este pacote pode desativar toda a hifenizaÁ„o ou ativar a hifenizaÁ„o de fontes n„o-alfabÈticos ou monoespaÁadas.
 \RequirePackage{hyphenat}
 % --------------- Utilizado para construir a capa e folha de rosto
 \RequirePackage{tabularx}
 \RequirePackage{xstring}
 
-% --------------- Estiliza√ß√£o dos r√≥tulos de cap√≠tulos e se√ß√µes
+% --------------- EstilizaÁ„o dos rÛtulos de capÌtulos e seÁıes
 
-\addto\captionsbrazil{% portugues-brasil
+\addto\captionsbrazilian{% portugues-brasil
   %% ajusta nomes padroes do babel
   \renewcommand{\bibname}{REFER\^ENCIAS}
 }
@@ -203,10 +208,10 @@ xrightmargin=10pt
 
 
 
-% --------------- Formata√ß√£o das captions de figuras e tabelas
+% --------------- FormataÁ„o das captions de figuras e tabelas
 \RequirePackage[labelfont=bf,textfont=bf,labelsep=endash, singlelinecheck=false,justification=centering]{caption}
 % ------------------------------------------------------------------------------------------------------ %
-% --------------- Redefini√ß√£o de comandos e cria√ß√£o de comandos b√°sicos para documento
+% --------------- RedefiniÁ„o de comandos e criaÁ„o de comandos b·sicos para documento
 % ------------------------------------------------------------------------------------------------------ %
 \renewenvironment{quote}
                {\list{}{\itemindent    \listparindent
@@ -218,20 +223,20 @@ xrightmargin=10pt
 % ------------------------------------------------------------------------------------------------------ %
 \DeclareOption{tcc}{%
   \newcommand{\@degree}{B.el.}
-  \newcommand{\@projecttype}{Pr√©-Projeto}
+  \newcommand{\@projecttype}{PrÈ-Projeto}
   \newcommand{\@degreename}{Bacharelado}
   \newcommand{\local@degname}{Bacharel}
   \newcommand{\foreign@degname}{Bachelor}
-  \newcommand\local@doctype{Trabalho de Conclus√£o de Curso}
+  \newcommand\local@doctype{Trabalho de Conclus„o de Curso}
   \newcommand\foreign@doctype{Bachelor Thesis}
 }
 \DeclareOption{tcc1}{%
   \newcommand{\@degree}{B.el.}
-  \newcommand{\@projecttype}{Pr√©-Projeto}
+  \newcommand{\@projecttype}{PrÈ-Projeto}
   \newcommand{\@degreename}{Bacharelado}
   \newcommand{\local@degname}{Bacharel}
   \newcommand{\foreign@degname}{Bachelor}
-  \newcommand\local@doctype{Trabalho de Conclus√£o de Curso I}
+  \newcommand\local@doctype{Trabalho de Conclus„o de Curso I}
   \newcommand\foreign@doctype{Bachelor Thesis}
 }
 \DeclareOption{tcc2}{%
@@ -240,7 +245,7 @@ xrightmargin=10pt
   \newcommand{\@degreename}{Bacharelado}
   \newcommand{\local@degname}{Bacharel}
   \newcommand{\foreign@degname}{Bachelor}
-  \newcommand\local@doctype{Trabalho de Conclus√£o de Curso II}
+  \newcommand\local@doctype{Trabalho de Conclus„o de Curso II}
   \newcommand\foreign@doctype{Bachelor Thesis}
 }
 
@@ -261,7 +266,7 @@ xrightmargin=10pt
     {\global\def\local@deptname{Engenharia de Alimentos}
      \global\def\foreign@deptname{Food Engineering}}{}
   \ifthenelse{\equal{#1}{SAD}}
-    {\global\def\local@deptname{Sistemas de Apoio √† Decis√£o}
+    {\global\def\local@deptname{Sistemas de Apoio ‡ Decis„o}
      \global\def\foreign@deptname{Decision Support Systems}}{}
 }
 % ------------------------------------------------------------------------------------------------------ %
@@ -431,7 +436,7 @@ xrightmargin=10pt
   \end{minipage}
  \end{flushright}
 \vfill
-\noindent Data de aprova√ß√£o: \number\day\ / \number\month\ / \number\year\
+\noindent Data de aprovaÁ„o: \number\day\ / \number\month\ / \number\year\
 
 \vspace{1cm}
 
@@ -457,7 +462,7 @@ xrightmargin=10pt
   {\small
     \setlength{\fboxsep}{3mm}
       \begin{minipage}{135mm}
-      {\bf\centering Dados Internacionais de Cataloga√ß√£o na Publica√ß√£o (CIP) \par
+      {\bf\centering Dados Internacionais de CatalogaÁ„o na PublicaÁ„o (CIP) \par
       Sistema de Bibliotecas da \local@universityname \par}
        \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
        {\footnotesize
@@ -471,7 +476,7 @@ xrightmargin=10pt
       % the spacing between it and the next paragraph becomes smaller.
       % Should we manually introduce a fixed space? But how could we know that
       % a name was split? Is this happening yet?
-      \nohyphens{Monografia Gradua√ß√£o -- \local@universityname\ -- Campus Universit√°rio de \local@cityname\ -- Curso de \local@deptname, \number\year.}\par
+      \nohyphens{Monografia GraduaÁ„o -- \local@universityname\ -- Campus Universit·rio de \local@cityname\ -- Curso de \local@deptname, \number\year.}\par
       
       \nohyphens{%
       \begin{tabularx}{100mm}[b]{@{ }>{\raggedright\arraybackslash}X@{}}
@@ -499,7 +504,7 @@ xrightmargin=10pt
         \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ {\bf CDD 4}
         \end{tabularx}
         \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
-        \noindent\sloppy\nohyphens{TODOS OS DIREITOS RESERVADOS -- A reprodu√ß√£o total ou parcial, de qualquer forma ou por qualquer meio deste documento √© autorizado desde que citada a fonte. A viola√ß√£o dos direitos do autor (Lei n¬∫ 9.610/98) √© crime estabelecido pelo artigo 184 do C√≥digo Penal.}}
+        \noindent\sloppy\nohyphens{TODOS OS DIREITOS RESERVADOS -- A reproduÁ„o total ou parcial, de qualquer forma ou por qualquer meio deste documento È autorizado desde que citada a fonte. A violaÁ„o dos direitos do autor (Lei n∫ 9.610/98) È crime estabelecido pelo artigo 184 do CÛdigo Penal.}}
     \end{minipage}}
   \end{center}
   }%\vspace*{\fill}}
@@ -694,17 +699,17 @@ xrightmargin=10pt
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontcover@maintext{
      \sloppy\nohyphens{\local@universityname \par
-        C√¢mpus Universit√°rio de Palmas\par
+        C‚mpus Universit·rio de Palmas\par
      \local@deptstring\ de \local@deptname}
 }
 
 \newcommand\approvepage@maintext{
-  \local@doctype\ apresentado √† UFT -- \local@universityname\ -- C√¢mpus Universit√°rio de \local@cityname , Curso de \local@deptname\ foi avaliado para a obten√ß√£o do t√≠tulo de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
+  \local@doctype\ apresentado ‡ UFT -- \local@universityname\ -- C‚mpus Universit·rio de \local@cityname , Curso de \local@deptname\ foi avaliado para a obtenÁ„o do tÌtulo de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
 }
 
 % ------------------------------------------------------------------------------------------------------ %
 \newcommand\frontpage@maintext{
-  \sloppy\nohyphens{\local@doctype\ apresentado √† \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname .
+  \sloppy\nohyphens{\local@doctype\ apresentado ‡ \local@universityname\ para obten{\c c}{\~ a}o do t{\' i}tulo de \local@degname\ em \local@deptname .
 
  \vspace{.5cm}
   \nohyphens{%
@@ -742,7 +747,7 @@ xrightmargin=10pt
 \setlength{\parindent}{1.25cm}
 
 % ------------------------------------------------------------------------------------------------------ %
-% Inicio Pr√©-Projeto
+% Inicio PrÈ-Projeto
 % ------------------------------------------------------------------------------------------------------ %
 \DeclareOption{project}{
 \setlength{\parindent}{0cm}
@@ -795,11 +800,11 @@ xrightmargin=10pt
   \local@monthname\ de \number\year
   \end{center}
 
-  \textbf{Identifica√ß√£o} \par
+  \textbf{IdentificaÁ„o} \par
   \nohyphens{{\bf Aluno}: \@authname\ \@authsurn}\par
   \count1=0
   \count2=0
-  \nohyphens{{\bfseries √Årea de Pesquisa}: \@whilenum \count1<\@fields \do {%
+  \nohyphens{{\bfseries ¡rea de Pesquisa}: \@whilenum \count1<\@fields \do {%
         \count2=\count1
         \advance\count2 by 1
         \ifnum\count2=\@fields\relax
@@ -829,7 +834,7 @@ xrightmargin=10pt
 }
 }
 % ------------------------------------------------------------------------------------------------------ %
-% Fim Pr√©-Projeto
+% Fim PrÈ-Projeto
 % ------------------------------------------------------------------------------------------------------ %
 
 
@@ -838,24 +843,24 @@ xrightmargin=10pt
 % ------------------------------------------------------------------------------------------------------ %
 \DeclareOption{latosensu}{
 
-  \renewcommand{\@degreename}{Especializa√ß√£o}
+  \renewcommand{\@degreename}{EspecializaÁ„o}
   \renewcommand{\local@degname}{Especialista}
   \renewcommand{\foreign@degname}{Specialist}
-  \newcommand{\local@program}{P√≥s-Gradua√ß√£o \textit{Lato Sensu}}
+  \newcommand{\local@program}{PÛs-GraduaÁ„o \textit{Lato Sensu}}
 
 \renewcommand\approvepage@maintext{
-  \local@doctype\ apresentado √† UFT -- \local@universityname\ -- C√¢mpus Universit√°rio de \local@cityname , Curso de \local@program\ em \local@deptname\ foi avaliado como requisito parcial para a obten√ß√£o do certificado de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
+  \local@doctype\ apresentado ‡ UFT -- \local@universityname\ -- C‚mpus Universit·rio de \local@cityname , Curso de \local@program\ em \local@deptname\ foi avaliado como requisito parcial para a obtenÁ„o do certificado de \local@degname\ e aprovada em sua forma final pelo Orientador e pela Banca Examinadora.
 }
 
 \renewcommand\frontcover@maintext{
      \sloppy\nohyphens{\local@universityname \par
-        C√¢mpus Universit√°rio de Palmas\par
+        C‚mpus Universit·rio de Palmas\par
      \local@deptstring\ de \local@program\ em \local@deptname}
 }
 
 % ------------------------------------------------------------------------------------------------------ %
 \renewcommand\frontpage@maintext{
-  \sloppy\nohyphens{\local@doctype\ apresentado √† \local@universityname\ como requisito parcial para obten{\c c}{\~ a}o do certificado de \local@degname\ em \local@deptname, sob a orienta\c{c}\~ao  do(a) Prof.(a) 
+  \sloppy\nohyphens{\local@doctype\ apresentado ‡ \local@universityname\ como requisito parcial para obten{\c c}{\~ a}o do certificado de \local@degname\ em \local@deptname, sob a orienta\c{c}\~ao  do(a) Prof.(a) 
    \nohyphens{%
     \count1=0
     \@whilenum \count1<\@advisor \do{%

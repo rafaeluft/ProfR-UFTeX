@@ -7,6 +7,35 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass {uftex} %[\filedate\ \fileversion\ Classe personalizada para o curso de Ci\^encia da Computa\c{c}\~ao da UFT - CUP]
 
+% === Correção de codificação, fontes e cópia/colagem ===
+\RequirePackage{iftex}
+\ifPDFTeX
+  % Ajuda na extração de texto e mapeia glifos -> Unicode
+  \RequirePackage{cmap}
+  % Codificação de saída da fonte em T1 (essencial para acentos)
+  \RequirePackage[T1]{fontenc}
+  % Assuma que os .tex estão em UTF-8; altere para [latin1] se necessário
+  \RequirePackage[utf8]{inputenc}
+  % Evita Type 3; usa fontes Type 1 de alta qualidade
+  \RequirePackage{lmodern}
+  % Garante ToUnicode CMap no PDF (cópia/cola correta)
+  \input glyphtounicode.tex
+  \pdfgentounicode=1
+  % Idioma (babel) para pdfLaTeX
+  \RequirePackage[english,brazil]{babel}
+\else
+  % XeLaTeX / LuaLaTeX: NÃO usar inputenc/fontenc; usar fontspec
+  \RequirePackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  % Idioma (polyglossia) para Xe/LuaLaTeX
+  \RequirePackage{polyglossia}
+  \setdefaultlanguage{portuguese}
+  \setotherlanguage{english}
+\fi
+% === Fim da correção ===
+
+
 \def\@@ptsize{12pt}
 \DeclareOption{10pt}{\def\@@ptsize{10pt}}
 \DeclareOption{11pt}{\def\@@ptsize{11pt}}
@@ -19,15 +48,15 @@
 % --------------- Pacotes
 % ------------------------------------------------------------------------------------------------------ %
 % --------------- A codificação de fonte T1 é uma codificação de 8 bits e utiliza fontes que têm 256 glifos
-\RequirePackage{cmap}
+% <removido pela correção: \RequirePackage{cmap}>
 
-\RequirePackage[T1]{fontenc}
+% <removido pela correção: \RequirePackage[T1]{fontenc}>
 % --------------- Idioma da texto, a acentuação pode ser escrita normalmente
-\RequirePackage[english,brazil]{babel}
+% <removido pela correção: \RequirePackage[english,brazil]{babel}>
 % --------------- Codificação do arquivo
-\RequirePackage[utf8]{inputenc}
+% <removido pela correção: \RequirePackage[utf8]{inputenc}>
 
-\RequirePackage{lmodern}
+% <removido pela correção: \RequirePackage{lmodern}>
 % --------------- Inclusão de arquivos em PDF no documento
 \RequirePackage{pdfpages}
 % --------------- Utilização da marca d'agua
